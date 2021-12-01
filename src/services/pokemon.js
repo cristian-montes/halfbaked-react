@@ -52,18 +52,25 @@ export const fetchSearchPokemon = (pokemonName) => {
     });
 };
 
-export const fetchTypes = async () => {
-  const res = fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex/types`);
 
-  const pokemonTypes = res.json();
+
+export const fetchTypes = async () => {
+  const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex/types`);
+
+  const pokemonTypes = await res.json();
 
   // get random types
   const randomTypes = pokemonTypes
     .map((pokemonType) => ({type: pokemonType.type}))
     .sort(() => 0.5 - Math.random())
     .slice(0, 5);
-  return randomTypes;
+
+  console.log('here',randomTypes);
+    return randomTypes;
 };
+
+
+
 
 export const fetchFilteredPokemon = async (type) => {
   const res = await fetch(

@@ -17,7 +17,7 @@ export default function Compendium() {
   const [types, setTypes] = useState([]);
   const [selectedType, setSelectedType] = useState('all');
 
- 
+  // TODO 😖 help!
     useEffect(() => {
       const getPokemon = async () => {
         const pokemonList = await fetchPokemon();
@@ -26,15 +26,15 @@ export default function Compendium() {
       };
       getPokemon();
     }, []);
-    
-  //TODO 😖 help!
-  //   useEffect(async () => {
-  //      function getTypes() {
-  //       const pokemonTypes = fetchTypes();
-  //       setTypes(pokemonTypes);
-  //     }
-  //     getTypes();
-  //   }, []);
+
+  // TODO 😖 help!
+    useEffect(() => {
+       async function getTypes() {
+        const pokemonTypes = await fetchTypes();
+        setTypes(pokemonTypes);
+      }
+      getTypes();
+    }, []);
 
   //TODO 😖 help!
   // useEffect(() => {
