@@ -50,7 +50,7 @@ export default function Compendium() {
         setPokemons(pokemonList);
       }
       setLoading(false);
-      // setSort('');
+   
     }
 
     getFilteredPokemon();
