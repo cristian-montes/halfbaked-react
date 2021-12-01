@@ -45,7 +45,8 @@ export default function Compendium() {
       if (selectedType !== 'all') {
         const filteredPokemon = await fetchFilteredPokemon(selectedType);
         setPokemons(filteredPokemon);
-      } else {
+      }
+       else {
         const pokemonList = await fetchPokemon();
         setPokemons(pokemonList);
       }
@@ -56,12 +57,16 @@ export default function Compendium() {
     getFilteredPokemon();
   }, [selectedType]);
 
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
+    
     fetchSearchPokemon(searchName)
       .then((searchedPokemons) => {
-        this.setState({pokemons: searchedPokemons});
+       
+        setPokemons(searchedPokemons);
       })
       .catch((error) => {})
       .finally(() => {
