@@ -21,7 +21,7 @@ export const fetchPokemon = async () => {
       );
 
       const pokemonData = await fetchedPokemon.json();
-
+        // console.log('data', pokemonData)
       // Need to filter mega pokemon
       if (pokemonData.count > 1) {
         const exactPokemon = pokemonData.results.find(
@@ -33,8 +33,11 @@ export const fetchPokemon = async () => {
       return pokeMunger(pokemonData.results[0]);
     })
   );
+  // console.log('datatatata', pokemonList)
   return pokemonList;
 };
+
+
 
 export const fetchSearchPokemon = (pokemonName) => {
   const lowerCaseName = pokemonName.toLowerCase();

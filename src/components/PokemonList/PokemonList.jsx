@@ -3,6 +3,7 @@ import Pokemon from '../Pokemon/Pokemon'
 import './PokemonList.css'
 
 export default function PokemonList({ pokemons }) {
+  console.log('POKEMONS', pokemons)
   return (
     <ul aria-label="pokemonList" className="pokemonList">
       {pokemons.map((pokemon) => {
